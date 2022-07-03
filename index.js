@@ -22,6 +22,10 @@ function getMealById(mealId) {
 }
 
 function getRandomMeal() {
+  mealsEl.innerHTML = '';
+  resultsHeading.innerHTML = '';
+
+  
   fetch(searchRandomMealURL)
     .then((res) => res.json())
     .then((data) => {
