@@ -11,7 +11,7 @@ const resultsHeading = document.getElementById("results-heading");
 const mealsEl = document.getElementById("meals");
 const singleMealEl = document.getElementById("single-meal");
 
-function getMealById(mealId) {
+function getMealById(mealId) {  
   fetch(`${searchMealByIdURL}${mealId}`)
     .then((response) => response.json())
     .then((data) => {
@@ -25,7 +25,7 @@ function getRandomMeal() {
   mealsEl.innerHTML = '';
   resultsHeading.innerHTML = '';
 
-  
+
   fetch(searchRandomMealURL)
     .then((res) => res.json())
     .then((data) => {
@@ -68,6 +68,8 @@ function addMealToDOM(meal) {
 function searchTerm(e) {
   e.preventDefault();
   meals.innerHTML = "";
+  singleMealEl.innerHTML = '';
+
   const term = search.value;
 
   console.log("Term to search: ", term);
